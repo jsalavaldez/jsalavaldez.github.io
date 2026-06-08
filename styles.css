@@ -1,0 +1,500 @@
+/* 
+   ==========================================================================
+   PÁGINA WEB PERSONAL - JOSÉ MIGUEL SALAVALDEZ MENDÉZ
+   Tema Oscuro Elegante con Azul Eléctrico (Simple, Moderno y Fluido)
+   ========================================================================== 
+*/
+
+/* Configuración básica y tipografía */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #f1f5f9;
+    background-color: #0b0f19;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Contenedor centralizado */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ==========================================================================
+   ANIMACIONES CSS (MICRO-MOVIMIENTO Y COHERENCIA VISUAL)
+   ========================================================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        text-shadow: 0 0 8px rgba(0, 210, 255, 0.2), 0 0 15px rgba(0, 210, 255, 0.1);
+    }
+
+    50% {
+        text-shadow: 0 0 15px rgba(0, 210, 255, 0.5), 0 0 25px rgba(0, 210, 255, 0.3);
+        color: #5ce6ff;
+    }
+}
+
+/* Clases base de animación para el contenido */
+.animate-fade-in {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-left {
+    opacity: 0;
+    animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Tiempos de retraso escalonados (staggered delay) */
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+
+.delay-500 {
+    animation-delay: 0.5s;
+}
+
+.delay-600 {
+    animation-delay: 0.6s;
+}
+
+.delay-700 {
+    animation-delay: 0.7s;
+}
+
+/* ==========================================================================
+   CABECERA Y NAVEGACIÓN
+   ========================================================================== */
+header {
+    background-color: #111827;
+    border-bottom: 2px solid #00d2ff;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #00d2ff;
+    animation: glowPulse 3s infinite ease-in-out;
+}
+
+nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.25s ease, transform 0.25s ease;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: #00d2ff;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   PERFIL Y PRESENTACIÓN
+   ========================================================================== */
+.profile-section {
+    background-color: #171e30;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.profile-container {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.profile-text {
+    flex: 1;
+}
+
+.profile-image-wrapper {
+    flex-shrink: 0;
+    width: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #00d2ff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.profile-image-wrapper:hover {
+    transform: scale(1.03) translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 210, 255, 0.3);
+    border-color: #5ce6ff;
+}
+
+.profile-image {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .profile-image-wrapper {
+        width: 180px;
+        margin-bottom: 20px;
+    }
+    
+    .quick-links {
+        justify-content: center;
+    }
+}
+
+.profile-title {
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 2.2rem;
+    letter-spacing: -0.02em;
+}
+
+.profile-subtitle {
+    color: #00d2ff;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.profile-details {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    border-top: 1px solid #2d3748;
+    padding-top: 20px;
+}
+
+.profile-details li {
+    margin-bottom: 10px;
+    color: #cbd5e1;
+    transition: transform 0.2s ease;
+}
+
+.profile-details li:hover {
+    transform: translateX(5px);
+}
+
+.profile-details strong {
+    color: #00d2ff;
+}
+
+/* ==========================================================================
+   SECCIONES Y TARJETAS
+   ========================================================================== */
+section {
+    background-color: #171e30;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+section h2 {
+    color: #ffffff;
+    border-bottom: 2px solid #00d2ff;
+    padding-bottom: 8px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+}
+
+/* Enlaces institucionales rápidos */
+.quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.link-tag {
+    background-color: #1e293b;
+    border: 1px solid #3b82f6;
+    color: #38bdf8;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.link-tag:hover {
+    background-color: #00d2ff;
+    color: #0b0f19;
+    border-color: #00d2ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 210, 255, 0.25);
+}
+
+/* Listado de Cursos */
+.courses-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+@media (max-width: 600px) {
+    .courses-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+.course-card {
+    background-color: #1e293b;
+    border: 1px solid #2d3748;
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.course-card:hover {
+    border-color: #00d2ff;
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 210, 255, 0.1);
+}
+
+.course-code {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #00d2ff;
+    text-transform: uppercase;
+}
+
+.course-title {
+    color: #ffffff;
+    margin: 5px 0 10px 0;
+    font-size: 1.1rem;
+}
+
+.course-desc {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* Sección de Profesor Especial: Ernesto Cuadros */
+.professor-card {
+    border-left: 4px solid #00d2ff;
+    background-color: #1e293b;
+    padding: 25px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 20px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.professor-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 210, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.prof-container {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.prof-image-wrapper {
+    flex-shrink: 0;
+    width: 130px;
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #00d2ff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.prof-image-wrapper:hover {
+    transform: scale(1.04) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 210, 255, 0.25);
+    border-color: #5ce6ff;
+}
+
+.prof-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.prof-details-content {
+    flex: 1;
+}
+
+.professor-name {
+    color: #ffffff;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.25rem;
+}
+
+.professor-role {
+    font-size: 0.85rem;
+    color: #00d2ff;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.professor-bio {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-bottom: 15px;
+}
+
+.prof-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-top: 1px solid #2d3748;
+    padding-top: 12px;
+}
+
+.prof-link {
+    font-size: 0.8rem;
+    color: #00d2ff;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.prof-link:hover {
+    text-decoration: underline;
+    color: #5ce6ff;
+}
+
+@media (max-width: 600px) {
+    .prof-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .prof-image-wrapper {
+        margin-bottom: 15px;
+        width: 110px;
+        height: 150px;
+    }
+    
+    .prof-links {
+        justify-content: center;
+    }
+}
+
+/* Enlaces de Contacto Principal */
+.contact-section {
+    text-align: center;
+}
+
+.btn-linkedin {
+    display: inline-block;
+    background-color: #0077b5;
+    color: #ffffff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    margin: 8px;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-linkedin:hover {
+    background-color: #005987;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 119, 181, 0.4);
+}
+
+.btn-email {
+    display: inline-block;
+    background-color: #1e293b;
+    border: 1px solid #2d3748;
+    color: #ffffff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    margin: 8px;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-email:hover {
+    background-color: #2d3748;
+    border-color: #00d2ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.15);
+}
+
+/* Pie de Página */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #64748b;
+    font-size: 0.85rem;
+    border-top: 1px solid #1e293b;
+    margin-top: 20px;
+}
